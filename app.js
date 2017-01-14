@@ -5,32 +5,33 @@ const MongoClient = require('mongodb').MongoClient
 
 var db 
 app.set('port', (process.env.PORT || 3000));
+console.log('Apps is running and listening to ', app.get('port'))
 
-//For avoidong Heroku $PORT error
-app.get('/', function(request, response) {
-    var result = 'App is running'
-    response.send(result);
-}).listen(app.get('port'), function() {
-    console.log('App is running, server is listening on port ', app.get('port'));
-});
+// //For avoidong Heroku $PORT error
+// app.get('/', function(request, response) {
+//     var result = 'App is running'
+//     response.send(result);
+// }).listen(app.get('port'), function() {
+//     console.log('App is running, server is listening on port ', app.get('port'));
+// });
 
 
-MongoClient.connect('mongodb://calube:lollypop17@ds163718.mlab.com:63718/mymaps', (err, database) => {
-	if (err) return console.log(err)
-		db = database 
-	// app.listen(process.env.PORT || 5000, () => {
-	// 	console.log('database connected')
-	// })
-	// app.listen(5000, () => {
-	// 	console.log('database connected')
-	// })
-})
+// MongoClient.connect('mongodb://calube:lollypop17@ds163718.mlab.com:63718/mymaps', (err, database) => {
+// 	if (err) return console.log(err)
+// 		db = database 
+// 	// app.listen(process.env.PORT || 5000, () => {
+// 	// 	console.log('database connected')
+// 	// })
+// 	// app.listen(5000, () => {
+// 	// 	console.log('database connected')
+// 	// })
+// })
 
-// Note: request = req and response = res
-app.get('/', (req, res) => {
-	console.log("index works")
-	res.sendFile(__dirname + '/index.html')
-})
+// // Note: request = req and response = res
+// app.get('/', (req, res) => {
+// 	console.log("index works")
+// 	res.sendFile(__dirname + '/index.html')
+// })
 
 // app.use(bodyParser.urlencoded({extended: true}))
 
