@@ -18,12 +18,9 @@ app.get('/', function(request, response) {
 MongoClient.connect('mongodb://calube:lollypop17@ds163718.mlab.com:63718/mymaps', (err, database) => {
 	if (err) return console.log(err)
 		db = database 
-	// app.listen(process.env.PORT || 5000, () => {
-	// 	console.log('database connected')
-	// })
-	// app.listen(5000, () => {
-	// 	console.log('database connected')
-	// })
+	app.listen(process.env.PORT || 3000, () => {
+		console.log('MongoDB connected')
+	})
 })
 
 // Note: request = req and response = res
