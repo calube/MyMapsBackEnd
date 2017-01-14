@@ -6,7 +6,7 @@ const MongoClient = require('mongodb').MongoClient
 var db 
 app.set('port', (process.env.PORT || 3000));
 
-var baseURL = '45.55.250.94'
+var baseURL = '45.55.250.94:3000'
 
 
 //For avoidong Heroku $PORT error
