@@ -69,6 +69,6 @@ app.get('/getLocations', (req, res) => {
 	db.collection('locations').find().toArray(function(err, results) {
     if (err) return console.log(err)
     console.log(results)
-// 	res.json(results)
-//   })
-// })
+	res.json(results)
+  })
+})
