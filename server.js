@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 
 // app.use(bodyParser.urlencoded({extended: true}))
 
-app.post(baseURL + '/saveMaps', (req, res) => {
+app.post('/saveMaps', (req, res) => {
 	console.log(req.body)
   db.collection('maps').save(req.body, (err, result) => {
     if (err) return console.log(err)
@@ -44,7 +44,7 @@ app.post(baseURL + '/saveMaps', (req, res) => {
   })
 })
 
-app.get(baseURL + '/getMaps', (req, res) => {
+app.get('/getMaps', (req, res) => {
 	var cursor = db.collection('maps').find()
 	db.collection('maps').find().toArray(function(err, results) {
     if (err) return console.log(err)
