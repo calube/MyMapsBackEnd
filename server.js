@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/index.html')
 })
 
-// app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({extended: true}))
 
 app.post('/saveMaps', (req, res) => {
 	console.log(req.body)
@@ -56,7 +56,7 @@ app.get('/getMaps', (req, res) => {
 
 app.post('/saveLocations', (req, res) => {
 	console.log("location!")
-	console.log("req.body = ", req.body)
+	console.log("req.params = ", req.params)
   db.collection('locations').save(req.body, (err, result) => {
     if (err) return console.log(err)
     console.log('saved to database')
