@@ -56,7 +56,7 @@ app.get('/getMaps', (req, res) => {
 
 app.post('/saveLocations', (req, res) => {
 	console.log("location!")
-	console.log("req.params = ", req.params)
+	console.log("req.body = ", req.body)
   db.collection('locations').save(req.body, (err, result) => {
     if (err) return console.log(err)
     console.log('saved to database')
