@@ -40,9 +40,8 @@ app.post('/saveMaps', (req, res) => {
     if (err) return console.log(err)
 
     console.log('LITTLE DICKS GO HERE', result.ops[0]._id)
-	//res.json(result[0]._id)
-// send back the mapID in the response 
-    res.send(result.ops[0]._id)
+
+    res.json(result.ops[0]._id)
   })
 })
 
