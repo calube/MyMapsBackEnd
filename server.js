@@ -39,7 +39,7 @@ app.post('/saveMaps', (req, res) => {
   db.collection('maps').save(req.body, (err, result) => {
     if (err) return console.log(err)
 
-    //console.log(result[0]._id)
+    console.log(result)
 	//res.json(result[0]._id)
 // send back the mapID in the response 
     res.send(result)
